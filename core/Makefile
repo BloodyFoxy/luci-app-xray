@@ -60,6 +60,10 @@ endef
 define Build/Compile
 endef
 
+define Build/Clean
+ rm -f $(PKG_BUILD_DIR)/.built
+endef
+
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 if [[ -z "$${IPKG_INSTROOT}" ]]; then

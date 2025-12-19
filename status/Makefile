@@ -24,7 +24,11 @@ define Package/$(PKG_NAME)/description
 endef
 
 define Build/Compile
-	echo "luci-app-xray $(PKG_VERSION)-$(PKG_RELEASE) `git rev-parse HEAD` `date +%s`" > $(PKG_BUILD_DIR)/version.txt
+ echo "luci-app-xray $(PKG_VERSION)-$(PKG_RELEASE) `git rev-parse HEAD` `date +%s`" > $(PKG_BUILD_DIR)/version.txt
+endef
+
+define Build/Clean
+ rm -f $(PKG_BUILD_DIR)/.built
 endef
 
 define Package/$(PKG_NAME)/install
